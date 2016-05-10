@@ -303,11 +303,9 @@ public class ViewController:UIViewController, UIScrollViewDelegate, PhotoSliderI
         }
         
         self.currentPage = page
-        delegate?.photoSliderControllerDidMoveToIndex?(self, index: self.currentPage)
         if self.visiblePageControl {
             self.pageControl.currentPage = self.currentPage
         }
-
     }
     
     public func scrollViewDidEndDragging(scrollView: UIScrollView, willDecelerate decelerate: Bool) {
@@ -371,7 +369,7 @@ public class ViewController:UIViewController, UIScrollViewDelegate, PhotoSliderI
             // If page index has changed - reset zoom scale for previous image.
             let imageView = self.imageViews[self.previousPage]
             imageView.scrollView.zoomScale = imageView.scrollView.minimumZoomScale
-            
+            delegate?.photoSliderControllerDidMoveToIndex?(self, index: self.currentPage)
             // Show Caption Label
             self.updateCaption()
 
