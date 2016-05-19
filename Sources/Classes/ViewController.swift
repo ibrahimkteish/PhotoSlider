@@ -172,6 +172,11 @@ public class ViewController:UIViewController, UIScrollViewDelegate, PhotoSliderI
         self.scrollInitalized = true
     }
     
+    //MARK : - Overrides
+    override public func prefersStatusBarHidden() -> Bool {
+        return true
+    }
+    
     // MARK: - Constraints
     
     func layoutScrollView() {
