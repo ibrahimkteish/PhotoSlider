@@ -44,7 +44,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         PhotoSlider.Photo(imageURL:NSURL(string:"https://raw.githubusercontent.com/nakajijapan/PhotoSlider/master/Resources/image008.jpg")!, caption: "Japan. \nRice paddy."),
     ]
     override func prefersStatusBarHidden() -> Bool {
-        return false
+        return true
     }
     
     override func viewDidLayoutSubviews() {
